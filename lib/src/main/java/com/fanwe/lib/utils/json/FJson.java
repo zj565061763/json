@@ -11,7 +11,7 @@ import java.util.Map;
 
 public final class FJson
 {
-    private static final Gson GSON = new GsonBuilder()
+    public static final Gson GSON = new GsonBuilder()
             .registerTypeAdapter(int.class, new IntegerAdapter())
             .registerTypeAdapter(Integer.class, new IntegerAdapter())
 
