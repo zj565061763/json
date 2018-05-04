@@ -23,7 +23,7 @@ public abstract class NumberAdapter<T> implements JsonDeserializer<T>
                 return deserializeIllegalJsonElement(json);
             } else
             {
-                throw e;
+                throw new JsonParseException(e);
             }
         }
     }
