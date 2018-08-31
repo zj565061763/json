@@ -1,10 +1,10 @@
-package com.fanwe.json;
+package com.sd.json;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
-import com.fanwe.lib.utils.json.FJson;
+import com.sd.lib.utils.json.FJson;
 
 public class MainActivity extends AppCompatActivity
 {

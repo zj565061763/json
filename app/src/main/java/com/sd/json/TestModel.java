@@ -1,4 +1,4 @@
-package com.fanwe.json;
+package com.sd.json;
 
 public class TestModel
 {

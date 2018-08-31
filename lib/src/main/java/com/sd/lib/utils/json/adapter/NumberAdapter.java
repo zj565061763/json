@@ -1,4 +1,4 @@
-package com.fanwe.lib.utils.json.adapter;
+package com.sd.lib.utils.json.adapter;
 
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;

@@ -1,9 +1,9 @@
-package com.fanwe.lib.utils.json;
+package com.sd.lib.utils.json;
 
-import com.fanwe.lib.utils.json.adapter.DoubleAdapter;
-import com.fanwe.lib.utils.json.adapter.FloatAdapter;
-import com.fanwe.lib.utils.json.adapter.IntegerAdapter;
-import com.fanwe.lib.utils.json.adapter.LongAdapter;
+import com.sd.lib.utils.json.adapter.DoubleAdapter;
+import com.sd.lib.utils.json.adapter.FloatAdapter;
+import com.sd.lib.utils.json.adapter.IntegerAdapter;
+import com.sd.lib.utils.json.adapter.LongAdapter;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
