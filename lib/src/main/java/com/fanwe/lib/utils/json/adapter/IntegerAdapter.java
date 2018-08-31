@@ -5,7 +5,7 @@ import com.google.gson.JsonElement;
 public class IntegerAdapter extends NumberAdapter<Integer>
 {
     @Override
-    protected Integer deserializeIllegalJsonElement(JsonElement json)
+    protected Integer deserializeJsonElementWhenException(JsonElement json)
     {
         return 0;
     }

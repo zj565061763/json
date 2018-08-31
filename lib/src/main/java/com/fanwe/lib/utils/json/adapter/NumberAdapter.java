@@ -20,7 +20,7 @@ public abstract class NumberAdapter<T> implements JsonDeserializer<T>
             final String valueString = json.getAsString();
             if ("".equals(valueString) || "null".equals(valueString) || "false".equals(valueString))
             {
-                return deserializeIllegalJsonElement(json);
+                return deserializeJsonElementWhenException(json);
             } else
             {
                 throw new JsonParseException(e);
@@ -28,7 +28,7 @@ public abstract class NumberAdapter<T> implements JsonDeserializer<T>
         }
     }
 
-    protected abstract T deserializeIllegalJsonElement(JsonElement json);
+    protected abstract T deserializeJsonElementWhenException(JsonElement json);
 
     protected abstract T deserializeJsonElement(JsonElement json);
 }

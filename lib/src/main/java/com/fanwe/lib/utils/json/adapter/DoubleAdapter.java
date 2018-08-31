@@ -5,7 +5,7 @@ import com.google.gson.JsonElement;
 public class DoubleAdapter extends NumberAdapter<Double>
 {
     @Override
-    protected Double deserializeIllegalJsonElement(JsonElement json)
+    protected Double deserializeJsonElementWhenException(JsonElement json)
     {
         return 0D;
     }

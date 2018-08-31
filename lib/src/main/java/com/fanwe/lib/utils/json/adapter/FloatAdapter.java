@@ -5,7 +5,7 @@ import com.google.gson.JsonElement;
 public class FloatAdapter extends NumberAdapter<Float>
 {
     @Override
-    protected Float deserializeIllegalJsonElement(JsonElement json)
+    protected Float deserializeJsonElementWhenException(JsonElement json)
     {
         return 0F;
     }

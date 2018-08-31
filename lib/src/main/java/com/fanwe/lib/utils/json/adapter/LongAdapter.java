@@ -5,7 +5,7 @@ import com.google.gson.JsonElement;
 public class LongAdapter extends NumberAdapter<Long>
 {
     @Override
-    protected Long deserializeIllegalJsonElement(JsonElement json)
+    protected Long deserializeJsonElementWhenException(JsonElement json)
     {
         return 0L;
     }
