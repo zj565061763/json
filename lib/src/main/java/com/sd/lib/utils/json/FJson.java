@@ -1,11 +1,12 @@
 package com.sd.lib.utils.json;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.sd.lib.utils.json.adapter.DoubleAdapter;
 import com.sd.lib.utils.json.adapter.FloatAdapter;
 import com.sd.lib.utils.json.adapter.IntegerAdapter;
 import com.sd.lib.utils.json.adapter.LongAdapter;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import com.sd.lib.utils.json.adapter.StringAdapter;
 
 import java.util.Map;
 
@@ -23,6 +24,8 @@ public final class FJson
 
             .registerTypeAdapter(double.class, new DoubleAdapter())
             .registerTypeAdapter(Double.class, new DoubleAdapter())
+
+            .registerTypeAdapter(String.class, new StringAdapter())
             .create();
 
     private FJson()
