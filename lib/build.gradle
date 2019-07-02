@@ -9,7 +9,7 @@ android {
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 22
-        versionCode 20190103
+        versionCode 20190702
         versionName "1.1.1"
     }
 
@@ -22,7 +22,7 @@ android {
 }
 
 dependencies {
-    api 'com.google.code.gson:gson:2.8.2'
+    api 'com.google.code.gson:gson:2.8.5'
 }
 
 // 指定编码
