@@ -2,11 +2,6 @@ package com.sd.lib.json;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.sd.lib.json.adapter.DoubleAdapter;
-import com.sd.lib.json.adapter.FloatAdapter;
-import com.sd.lib.json.adapter.IntegerAdapter;
-import com.sd.lib.json.adapter.LongAdapter;
-import com.sd.lib.json.adapter.StringAdapter;
 
 import java.util.Map;
 

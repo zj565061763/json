@@ -1,4 +1,4 @@
-package com.sd.lib.json.adapter;
+package com.sd.lib.json;
 
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
