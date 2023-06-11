@@ -24,5 +24,15 @@ class ExampleInstrumentedTest {
             assertEquals(1, model.value1)
             assertEquals(2, model.value2)
         }
+
+        FJson.jsonToObject(
+            """
+            {"value1":"","value2":""}
+        """.trimIndent(),
+            IntModel::class.java,
+        ).let { model ->
+            assertEquals(0, model.value1)
+            assertEquals(0, model.value2)
+        }
     }
 }
