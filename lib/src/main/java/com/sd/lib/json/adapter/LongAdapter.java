@@ -2,17 +2,14 @@ package com.sd.lib.json.adapter;
 
 import com.google.gson.JsonElement;
 
-public class LongAdapter extends NumberAdapter<Long>
-{
+public class LongAdapter extends NumberAdapter<Long> {
     @Override
-    protected Long deserializeJsonElementWhenException(JsonElement json)
-    {
+    protected Long deserializeJsonElementWhenException(JsonElement json) {
         return 0L;
     }
 
     @Override
-    protected Long deserializeJsonElement(JsonElement json)
-    {
+    protected Long deserializeJsonElement(JsonElement json) {
         return json.getAsLong();
     }
 }

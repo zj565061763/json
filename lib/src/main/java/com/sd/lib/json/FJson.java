@@ -10,8 +10,7 @@ import com.sd.lib.json.adapter.StringAdapter;
 
 import java.util.Map;
 
-public final class FJson
-{
+public final class FJson {
     public static final Gson GSON = new GsonBuilder()
             .registerTypeAdapter(int.class, new IntegerAdapter())
             .registerTypeAdapter(Integer.class, new IntegerAdapter())
@@ -28,22 +27,18 @@ public final class FJson
             .registerTypeAdapter(String.class, new StringAdapter())
             .create();
 
-    private FJson()
-    {
+    private FJson() {
     }
 
-    public static <T> T jsonToObject(String json, Class<T> clazz)
-    {
+    public static <T> T jsonToObject(String json, Class<T> clazz) {
         return GSON.fromJson(json, clazz);
     }
 
-    public static String objectToJson(Object obj)
-    {
+    public static String objectToJson(Object obj) {
         return GSON.toJson(obj);
     }
 
-    public static <T> T mapToObject(Map map, Class<T> clazz)
-    {
+    public static <T> T mapToObject(Map map, Class<T> clazz) {
         if (map == null)
             return null;
 

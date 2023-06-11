@@ -7,22 +7,16 @@ import com.google.gson.JsonParseException;
 
 import java.lang.reflect.Type;
 
-public abstract class NumberAdapter<T> implements JsonDeserializer<T>
-{
+public abstract class NumberAdapter<T> implements JsonDeserializer<T> {
     @Override
-    public final T deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException
-    {
-        try
-        {
+    public final T deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
+        try {
             return deserializeJsonElement(json);
-        } catch (Exception e)
-        {
+        } catch (Exception e) {
             final String valueString = json.getAsString();
-            if ("".equals(valueString) || "null".equals(valueString) || "false".equals(valueString))
-            {
+            if ("".equals(valueString) || "null".equals(valueString) || "false".equals(valueString)) {
                 return deserializeJsonElementWhenException(json);
-            } else
-            {
+            } else {
                 throw new JsonParseException(e);
             }
         }
