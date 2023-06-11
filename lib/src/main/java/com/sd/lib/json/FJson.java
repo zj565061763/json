@@ -34,9 +34,6 @@ public final class FJson {
     }
 
     public static <T> T mapToObject(Map map, Class<T> clazz) {
-        if (map == null)
-            return null;
-
         final String json = objectToJson(map);
         return jsonToObject(json, clazz);
     }
