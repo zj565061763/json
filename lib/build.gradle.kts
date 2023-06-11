@@ -32,7 +32,7 @@ android {
 }
 
 dependencies {
-    implementation(libs.google.gson)
+    api(libs.google.gson)
 }
 
 afterEvaluate {
