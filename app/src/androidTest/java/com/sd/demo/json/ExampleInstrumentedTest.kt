@@ -15,11 +15,12 @@ import org.junit.runner.RunWith
 class ExampleInstrumentedTest {
     @Test
     fun testInt() {
+        val clazz = IntModel::class.java
         FJson.jsonToObject(
             """
             {"value1":"1","value2":"2"}
         """.trimIndent(),
-            IntModel::class.java,
+            clazz,
         ).let { model ->
             assertEquals(1, model.value1)
             assertEquals(2, model.value2)
@@ -29,7 +30,7 @@ class ExampleInstrumentedTest {
             """
             {"value1":"","value2":""}
         """.trimIndent(),
-            IntModel::class.java,
+            clazz,
         ).let { model ->
             assertEquals(0, model.value1)
             assertEquals(null, model.value2)
@@ -39,7 +40,7 @@ class ExampleInstrumentedTest {
             """
             {"value1":"null","value2":"null"}
         """.trimIndent(),
-            IntModel::class.java,
+            clazz,
         ).let { model ->
             assertEquals(0, model.value1)
             assertEquals(null, model.value2)
@@ -49,9 +50,53 @@ class ExampleInstrumentedTest {
             """
             {"value1":"false","value2":"false"}
         """.trimIndent(),
-            IntModel::class.java,
+            clazz,
         ).let { model ->
             assertEquals(0, model.value1)
+            assertEquals(null, model.value2)
+        }
+    }
+
+    @Test
+    fun testLong() {
+        val clazz = LongModel::class.java
+        FJson.jsonToObject(
+            """
+            {"value1":"1","value2":"2"}
+        """.trimIndent(),
+            clazz,
+        ).let { model ->
+            assertEquals(1L, model.value1)
+            assertEquals(2L, model.value2)
+        }
+
+        FJson.jsonToObject(
+            """
+            {"value1":"","value2":""}
+        """.trimIndent(),
+            clazz,
+        ).let { model ->
+            assertEquals(0L, model.value1)
+            assertEquals(null, model.value2)
+        }
+
+        FJson.jsonToObject(
+            """
+            {"value1":"null","value2":"null"}
+        """.trimIndent(),
+            clazz,
+        ).let { model ->
+            assertEquals(0L, model.value1)
+            assertEquals(null, model.value2)
+        }
+
+        FJson.jsonToObject(
+            """
+            {"value1":"false","value2":"false"}
+        """.trimIndent(),
+            clazz,
+        ).let { model ->
+            assertEquals(0L, model.value1)
             assertEquals(null, model.value2)
         }
     }
