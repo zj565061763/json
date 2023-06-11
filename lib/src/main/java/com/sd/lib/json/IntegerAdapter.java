@@ -4,12 +4,12 @@ import com.google.gson.JsonElement;
 
 class IntegerAdapter extends NumberAdapter<Integer> {
     @Override
-    protected Integer deserializeJsonElementWhenException(JsonElement json) {
-        return 0;
+    protected Integer deserializeImpl(JsonElement json) {
+        return json.getAsInt();
     }
 
     @Override
-    protected Integer deserializeImpl(JsonElement json) {
-        return json.getAsInt();
+    protected Integer defaultValueForException(JsonElement json) {
+        return 0;
     }
 }

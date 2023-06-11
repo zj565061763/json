@@ -4,12 +4,12 @@ import com.google.gson.JsonElement;
 
 class LongAdapter extends NumberAdapter<Long> {
     @Override
-    protected Long deserializeJsonElementWhenException(JsonElement json) {
-        return 0L;
+    protected Long deserializeImpl(JsonElement json) {
+        return json.getAsLong();
     }
 
     @Override
-    protected Long deserializeImpl(JsonElement json) {
-        return json.getAsLong();
+    protected Long defaultValueForException(JsonElement json) {
+        return 0L;
     }
 }

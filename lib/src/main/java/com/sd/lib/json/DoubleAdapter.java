@@ -4,12 +4,12 @@ import com.google.gson.JsonElement;
 
 class DoubleAdapter extends NumberAdapter<Double> {
     @Override
-    protected Double deserializeJsonElementWhenException(JsonElement json) {
-        return 0D;
+    protected Double deserializeImpl(JsonElement json) {
+        return json.getAsDouble();
     }
 
     @Override
-    protected Double deserializeImpl(JsonElement json) {
-        return json.getAsDouble();
+    protected Double defaultValueForException(JsonElement json) {
+        return 0D;
     }
 }

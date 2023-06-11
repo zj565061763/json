@@ -4,12 +4,12 @@ import com.google.gson.JsonElement;
 
 class FloatAdapter extends NumberAdapter<Float> {
     @Override
-    protected Float deserializeJsonElementWhenException(JsonElement json) {
-        return 0F;
+    protected Float deserializeImpl(JsonElement json) {
+        return json.getAsFloat();
     }
 
     @Override
-    protected Float deserializeImpl(JsonElement json) {
-        return json.getAsFloat();
+    protected Float defaultValueForException(JsonElement json) {
+        return 0F;
     }
 }

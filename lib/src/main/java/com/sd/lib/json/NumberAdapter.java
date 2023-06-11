@@ -17,14 +17,14 @@ abstract class NumberAdapter<T> implements JsonDeserializer<T> {
             if ("".equals(stringValue) ||
                     "null".equalsIgnoreCase(stringValue) ||
                     "false".equalsIgnoreCase(stringValue)) {
-                return deserializeJsonElementWhenException(json);
+                return defaultValueForException(json);
             } else {
                 throw new JsonParseException(e);
             }
         }
     }
 
-    protected abstract T deserializeJsonElementWhenException(JsonElement json);
-
     protected abstract T deserializeImpl(JsonElement json);
+
+    protected abstract T defaultValueForException(JsonElement json);
 }
