@@ -2,14 +2,14 @@ package com.sd.lib.json;
 
 import com.google.gson.JsonElement;
 
-public class IntegerAdapter extends NumberAdapter<Integer> {
+class IntegerAdapter extends NumberAdapter<Integer> {
     @Override
     protected Integer deserializeJsonElementWhenException(JsonElement json) {
         return 0;
     }
 
     @Override
-    protected Integer deserializeJsonElement(JsonElement json) {
+    protected Integer deserializeImpl(JsonElement json) {
         return json.getAsInt();
     }
 }
