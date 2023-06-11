@@ -34,5 +34,25 @@ class ExampleInstrumentedTest {
             assertEquals(0, model.value1)
             assertEquals(null, model.value2)
         }
+
+        FJson.jsonToObject(
+            """
+            {"value1":"null","value2":"null"}
+        """.trimIndent(),
+            IntModel::class.java,
+        ).let { model ->
+            assertEquals(0, model.value1)
+            assertEquals(null, model.value2)
+        }
+
+        FJson.jsonToObject(
+            """
+            {"value1":"false","value2":"false"}
+        """.trimIndent(),
+            IntModel::class.java,
+        ).let { model ->
+            assertEquals(0, model.value1)
+            assertEquals(null, model.value2)
+        }
     }
 }
