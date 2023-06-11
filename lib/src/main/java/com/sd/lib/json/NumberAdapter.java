@@ -19,7 +19,7 @@ abstract class NumberAdapter<T> implements JsonDeserializer<T> {
                     "false".equalsIgnoreCase(stringValue)) {
                 return defaultValueForException(json);
             } else {
-                throw new JsonParseException(e);
+                throw e;
             }
         }
     }
