@@ -16,7 +16,7 @@ class ExampleInstrumentedTest {
     @Test
     fun test() {
         val json = """
-            {"valueInt":"1", "valueLong":"2", "valueFloat":"3.3", "valueDouble":"4.4"}
+            {"valueInt":"1","valueLong":"2","valueFloat":"3.3","valueDouble":"4.4","valueBoolean":"true"}
         """.trimIndent()
 
         val gson = GsonBuilder().create()
@@ -26,6 +26,7 @@ class ExampleInstrumentedTest {
             assertEquals(2, model.valueLong)
             assertEquals(3.3f, model.valueFloat)
             assertEquals(4.4, model.valueDouble, 0.01)
+            assertEquals(true, model.valueBoolean)
         }
     }
 }
