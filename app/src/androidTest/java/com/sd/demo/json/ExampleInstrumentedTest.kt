@@ -32,7 +32,7 @@ class ExampleInstrumentedTest {
             IntModel::class.java,
         ).let { model ->
             assertEquals(0, model.value1)
-            assertEquals(0, model.value2)
+            assertEquals(null, model.value2)
         }
     }
 }
