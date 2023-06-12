@@ -188,4 +188,48 @@ class ExampleInstrumentedTest {
             assertEquals(null, model.value2)
         }
     }
+
+    @Test
+    fun testBoolean() {
+        val clazz = BooleanModel::class.java
+        FJson.jsonToObject(
+            """
+            {"value1":"true","value2":"true"}
+        """.trimIndent(),
+            clazz,
+        ).let { model ->
+            assertEquals(true, model.value1)
+            assertEquals(true, model.value2)
+        }
+
+        FJson.jsonToObject(
+            """
+            {"value1":"","value2":""}
+        """.trimIndent(),
+            clazz,
+        ).let { model ->
+            assertEquals(false, model.value1)
+            assertEquals(null, model.value2)
+        }
+
+        FJson.jsonToObject(
+            """
+            {"value1":"null","value2":"null"}
+        """.trimIndent(),
+            clazz,
+        ).let { model ->
+            assertEquals(false, model.value1)
+            assertEquals(null, model.value2)
+        }
+
+        FJson.jsonToObject(
+            """
+            {"value1":"false","value2":"false"}
+        """.trimIndent(),
+            clazz,
+        ).let { model ->
+            assertEquals(false, model.value1)
+            assertEquals(false, model.value2)
+        }
+    }
 }

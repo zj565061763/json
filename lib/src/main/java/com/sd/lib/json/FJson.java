@@ -41,12 +41,7 @@ public final class FJson {
             })
 
             .registerTypeAdapter(boolean.class, new BooleanAdapter())
-            .registerTypeAdapter(Boolean.class, new BooleanAdapter() {
-                @Override
-                protected Boolean defaultValueForException(JsonElement json) {
-                    return null;
-                }
-            })
+            .registerTypeAdapter(Boolean.class, new BooleanAdapter())
 
             .registerTypeAdapter(String.class, new StringAdapter())
             .create();
