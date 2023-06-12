@@ -144,4 +144,48 @@ class ExampleInstrumentedTest {
             assertEquals(null, model.value2)
         }
     }
+
+    @Test
+    fun testDouble() {
+        val clazz = DoubleModel::class.java
+        FJson.jsonToObject(
+            """
+            {"value1":"1","value2":"2"}
+        """.trimIndent(),
+            clazz,
+        ).let { model ->
+            assertEquals(1.0, model.value1, 0.01)
+            assertEquals(2.0, model.value2!!, 0.01)
+        }
+
+        FJson.jsonToObject(
+            """
+            {"value1":"","value2":""}
+        """.trimIndent(),
+            clazz,
+        ).let { model ->
+            assertEquals(0.0, model.value1, 0.01)
+            assertEquals(null, model.value2)
+        }
+
+        FJson.jsonToObject(
+            """
+            {"value1":"null","value2":"null"}
+        """.trimIndent(),
+            clazz,
+        ).let { model ->
+            assertEquals(0.0, model.value1, 0.01)
+            assertEquals(null, model.value2)
+        }
+
+        FJson.jsonToObject(
+            """
+            {"value1":"false","value2":"false"}
+        """.trimIndent(),
+            clazz,
+        ).let { model ->
+            assertEquals(0.0, model.value1, 0.01)
+            assertEquals(null, model.value2)
+        }
+    }
 }
