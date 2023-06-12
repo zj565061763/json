@@ -100,4 +100,48 @@ class ExampleInstrumentedTest {
             assertEquals(null, model.value2)
         }
     }
+
+    @Test
+    fun testFloat() {
+        val clazz = FloatModel::class.java
+        FJson.jsonToObject(
+            """
+            {"value1":"1","value2":"2"}
+        """.trimIndent(),
+            clazz,
+        ).let { model ->
+            assertEquals(1F, model.value1)
+            assertEquals(2F, model.value2)
+        }
+
+        FJson.jsonToObject(
+            """
+            {"value1":"","value2":""}
+        """.trimIndent(),
+            clazz,
+        ).let { model ->
+            assertEquals(0F, model.value1)
+            assertEquals(null, model.value2)
+        }
+
+        FJson.jsonToObject(
+            """
+            {"value1":"null","value2":"null"}
+        """.trimIndent(),
+            clazz,
+        ).let { model ->
+            assertEquals(0F, model.value1)
+            assertEquals(null, model.value2)
+        }
+
+        FJson.jsonToObject(
+            """
+            {"value1":"false","value2":"false"}
+        """.trimIndent(),
+            clazz,
+        ).let { model ->
+            assertEquals(0F, model.value1)
+            assertEquals(null, model.value2)
+        }
+    }
 }
