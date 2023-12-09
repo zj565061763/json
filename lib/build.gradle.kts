@@ -5,7 +5,7 @@ plugins {
 
 val libGroupId = "com.sd.lib.android"
 val libArtifactId = "json"
-val libVersionName = "1.3.0"
+val libVersionName = "1.4.0"
 
 android {
     namespace = "com.sd.lib.json"
@@ -30,14 +30,15 @@ dependencies {
     api(libs.google.gson)
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication>("release") {
+publishing {
+    publications {
+        create<MavenPublication>("release") {
+            groupId = libGroupId
+            artifactId = libArtifactId
+            version = libVersionName
+
+            afterEvaluate {
                 from(components["release"])
-                groupId = libGroupId
-                artifactId = libArtifactId
-                version = libVersionName
             }
         }
     }
