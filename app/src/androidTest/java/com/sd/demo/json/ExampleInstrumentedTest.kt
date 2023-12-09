@@ -16,7 +16,7 @@ class ExampleInstrumentedTest {
     @Test
     fun testInt() {
         val clazz = IntModel::class.java
-        FJson.jsonToObject(
+        FJson.fromJson(
             """
             {"value1":"1","value2":"2"}
         """.trimIndent(),
@@ -26,7 +26,7 @@ class ExampleInstrumentedTest {
             assertEquals(2, model.value2)
         }
 
-        FJson.jsonToObject(
+        FJson.fromJson(
             """
             {"value1":"","value2":""}
         """.trimIndent(),
@@ -36,7 +36,7 @@ class ExampleInstrumentedTest {
             assertEquals(null, model.value2)
         }
 
-        FJson.jsonToObject(
+        FJson.fromJson(
             """
             {"value1":"null","value2":"null"}
         """.trimIndent(),
@@ -46,7 +46,7 @@ class ExampleInstrumentedTest {
             assertEquals(null, model.value2)
         }
 
-        FJson.jsonToObject(
+        FJson.fromJson(
             """
             {"value1":"false","value2":"false"}
         """.trimIndent(),
@@ -60,7 +60,7 @@ class ExampleInstrumentedTest {
     @Test
     fun testLong() {
         val clazz = LongModel::class.java
-        FJson.jsonToObject(
+        FJson.fromJson(
             """
             {"value1":"1","value2":"2"}
         """.trimIndent(),
@@ -70,7 +70,7 @@ class ExampleInstrumentedTest {
             assertEquals(2L, model.value2)
         }
 
-        FJson.jsonToObject(
+        FJson.fromJson(
             """
             {"value1":"","value2":""}
         """.trimIndent(),
@@ -80,7 +80,7 @@ class ExampleInstrumentedTest {
             assertEquals(null, model.value2)
         }
 
-        FJson.jsonToObject(
+        FJson.fromJson(
             """
             {"value1":"null","value2":"null"}
         """.trimIndent(),
@@ -90,7 +90,7 @@ class ExampleInstrumentedTest {
             assertEquals(null, model.value2)
         }
 
-        FJson.jsonToObject(
+        FJson.fromJson(
             """
             {"value1":"false","value2":"false"}
         """.trimIndent(),
@@ -104,7 +104,7 @@ class ExampleInstrumentedTest {
     @Test
     fun testFloat() {
         val clazz = FloatModel::class.java
-        FJson.jsonToObject(
+        FJson.fromJson(
             """
             {"value1":"1","value2":"2"}
         """.trimIndent(),
@@ -114,7 +114,7 @@ class ExampleInstrumentedTest {
             assertEquals(2F, model.value2)
         }
 
-        FJson.jsonToObject(
+        FJson.fromJson(
             """
             {"value1":"","value2":""}
         """.trimIndent(),
@@ -124,7 +124,7 @@ class ExampleInstrumentedTest {
             assertEquals(null, model.value2)
         }
 
-        FJson.jsonToObject(
+        FJson.fromJson(
             """
             {"value1":"null","value2":"null"}
         """.trimIndent(),
@@ -134,7 +134,7 @@ class ExampleInstrumentedTest {
             assertEquals(null, model.value2)
         }
 
-        FJson.jsonToObject(
+        FJson.fromJson(
             """
             {"value1":"false","value2":"false"}
         """.trimIndent(),
@@ -148,7 +148,7 @@ class ExampleInstrumentedTest {
     @Test
     fun testDouble() {
         val clazz = DoubleModel::class.java
-        FJson.jsonToObject(
+        FJson.fromJson(
             """
             {"value1":"1","value2":"2"}
         """.trimIndent(),
@@ -158,7 +158,7 @@ class ExampleInstrumentedTest {
             assertEquals(2.0, model.value2!!, 0.01)
         }
 
-        FJson.jsonToObject(
+        FJson.fromJson(
             """
             {"value1":"","value2":""}
         """.trimIndent(),
@@ -168,7 +168,7 @@ class ExampleInstrumentedTest {
             assertEquals(null, model.value2)
         }
 
-        FJson.jsonToObject(
+        FJson.fromJson(
             """
             {"value1":"null","value2":"null"}
         """.trimIndent(),
@@ -178,7 +178,7 @@ class ExampleInstrumentedTest {
             assertEquals(null, model.value2)
         }
 
-        FJson.jsonToObject(
+        FJson.fromJson(
             """
             {"value1":"false","value2":"false"}
         """.trimIndent(),
@@ -192,7 +192,7 @@ class ExampleInstrumentedTest {
     @Test
     fun testBoolean() {
         val clazz = BooleanModel::class.java
-        FJson.jsonToObject(
+        FJson.fromJson(
             """
             {"value1":"true","value2":"true"}
         """.trimIndent(),
@@ -202,7 +202,7 @@ class ExampleInstrumentedTest {
             assertEquals(true, model.value2)
         }
 
-        FJson.jsonToObject(
+        FJson.fromJson(
             """
             {"value1":"","value2":""}
         """.trimIndent(),
@@ -212,7 +212,7 @@ class ExampleInstrumentedTest {
             assertEquals(null, model.value2)
         }
 
-        FJson.jsonToObject(
+        FJson.fromJson(
             """
             {"value1":"null","value2":"null"}
         """.trimIndent(),
@@ -222,7 +222,7 @@ class ExampleInstrumentedTest {
             assertEquals(null, model.value2)
         }
 
-        FJson.jsonToObject(
+        FJson.fromJson(
             """
             {"value1":"false","value2":"false"}
         """.trimIndent(),
