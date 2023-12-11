@@ -85,12 +85,17 @@ internal class KotlinJsonAdapter<T>(
 
             values[propertyIndex] = binding.adapter.fromJson(reader)
 
-            if (values[propertyIndex] == null && !binding.property.returnType.isMarkedNullable) {
-                throw Util.unexpectedNull(
-                    binding.property.name,
-                    binding.jsonName,
-                    reader
-                )
+//            if (values[propertyIndex] == null && !binding.property.returnType.isMarkedNullable) {
+//                throw Util.unexpectedNull(
+//                    binding.property.name,
+//                    binding.jsonName,
+//                    reader
+//                )
+//            }
+
+            // modify
+            if (values[propertyIndex] == null) {
+                values[propertyIndex] = ABSENT_VALUE
             }
         }
         reader.endObject()
