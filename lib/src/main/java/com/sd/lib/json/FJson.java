@@ -1,60 +1,25 @@
 package com.sd.lib.json;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonElement;
+import com.squareup.moshi.JsonAdapter;
+import com.squareup.moshi.Moshi;
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory;
 
 public final class FJson {
-    public static final Gson GSON = newGsonBuilder().create();
+
+    public static final Moshi Moshi = new Moshi.Builder()
+            .add(new KotlinJsonAdapterFactory())
+            .build();
 
     private FJson() {
     }
 
-    public static GsonBuilder newGsonBuilder() {
-        return new GsonBuilder()
-                .registerTypeAdapter(int.class, new IntegerAdapter())
-                .registerTypeAdapter(Integer.class, new IntegerAdapter() {
-                    @Override
-                    protected Integer defaultValueForException(JsonElement json) {
-                        return null;
-                    }
-                })
-
-                .registerTypeAdapter(long.class, new LongAdapter())
-                .registerTypeAdapter(Long.class, new LongAdapter() {
-                    @Override
-                    protected Long defaultValueForException(JsonElement json) {
-                        return null;
-                    }
-                })
-
-                .registerTypeAdapter(float.class, new FloatAdapter())
-                .registerTypeAdapter(Float.class, new FloatAdapter() {
-                    @Override
-                    protected Float defaultValueForException(JsonElement json) {
-                        return null;
-                    }
-                })
-
-                .registerTypeAdapter(double.class, new DoubleAdapter())
-                .registerTypeAdapter(Double.class, new DoubleAdapter() {
-                    @Override
-                    protected Double defaultValueForException(JsonElement json) {
-                        return null;
-                    }
-                })
-
-                .registerTypeAdapter(boolean.class, new BooleanAdapter())
-                .registerTypeAdapter(Boolean.class, new BooleanAdapter())
-
-                .registerTypeAdapter(String.class, new StringAdapter());
+    public static <T> T fromJson(String json, Class<T> clazz) throws Exception {
+        final JsonAdapter<T> adapter = Moshi.adapter(clazz);
+        return adapter.fromJson(json);
     }
 
-    public static <T> T fromJson(String json, Class<T> clazz) {
-        return GSON.fromJson(json, clazz);
-    }
-
-    public static String toJson(Object obj) {
-        return GSON.toJson(obj);
+    public static <T> String toJson(T instance, Class<T> clazz) {
+        final JsonAdapter<T> adapter = Moshi.adapter(clazz);
+        return adapter.toJson(instance);
     }
 }

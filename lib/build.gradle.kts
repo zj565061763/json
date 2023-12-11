@@ -27,7 +27,7 @@ android {
 }
 
 dependencies {
-    api(libs.google.gson)
+    api(libs.squareup.moshi)
 }
 
 publishing {
