@@ -62,6 +62,7 @@ private fun encodeMapModel() {
 private fun encodeRequestParams() {
     val model = PageRequestParams().apply {
         this.put("key", "value")
+        this.setPage(1)
     }
     val json = FJson.toJson(model, PageRequestParams::class.java)
     logMsg {
