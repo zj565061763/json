@@ -1,6 +1,7 @@
 package com.sd.demo.json.model
 
 open class RequestParams {
+    // 不能使用private
     protected var data: MutableMap<String, String>? = null
 
     fun put(key: String, value: String) {

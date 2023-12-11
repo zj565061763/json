@@ -4,9 +4,8 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.sd.demo.json.databinding.ActivityMainBinding
-import com.sd.demo.json.model.UserModel
-import com.sd.demo.json.model.MapModel
 import com.sd.demo.json.model.PageRequestParams
+import com.sd.demo.json.model.UserModel
 import com.sd.lib.json.FJson
 
 class MainActivity : AppCompatActivity() {
@@ -17,7 +16,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(_binding.root)
 
         _binding.btnEncode.setOnClickListener {
-            encodeMapModel()
             encodeRequestParams()
         }
 
@@ -34,16 +32,6 @@ private fun decodeUser() {
     val model = FJson.fromJson(json, UserModel::class.java)
     logMsg {
         "decodeDataUser:${model}"
-    }
-}
-
-private fun encodeMapModel() {
-    val model = MapModel().apply {
-        this.put("key", "value")
-    }
-    val json = FJson.toJson(model, MapModel::class.java)
-    logMsg {
-        "encodeMapModel:$json"
     }
 }
 
