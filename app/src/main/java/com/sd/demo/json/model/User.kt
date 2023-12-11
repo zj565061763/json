@@ -1,17 +1,9 @@
 package com.sd.demo.json.model
 
-data class DataUserModel(
+data class UserModel(
     val id: String,
 
     val name: String = "default",
 
     val age: Int = 10,
 )
-
-class UserModel {
-    val id: String = "ID"
-
-    val name: String = "default"
-
-    val age: Int = 10
-}
