@@ -11,6 +11,7 @@ kotlin = "1.9.21"
 
 androidx-appcompat = "androidx.appcompat:appcompat:1.6.1"
 google-gson = "com.google.code.gson:gson:2.10.1"
+squareup-moshi = "com.squareup.moshi:moshi-kotlin:1.14.0"
 
 junit = "junit:junit:4.13.2"
 androidx-test-ext-junit = "androidx.test.ext:junit:1.1.5"
