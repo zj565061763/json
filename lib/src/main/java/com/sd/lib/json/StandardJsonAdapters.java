@@ -42,14 +42,14 @@ final class StandardJsonAdapters {
                 public JsonAdapter<?> create(
                         Type type, Set<? extends Annotation> annotations, Moshi moshi) {
                     if (!annotations.isEmpty()) return null;
-                    if (type == boolean.class) return BOOLEAN_JSON_ADAPTER;
-                    if (type == byte.class) return BYTE_JSON_ADAPTER;
-                    if (type == char.class) return CHARACTER_JSON_ADAPTER;
-                    if (type == double.class) return DOUBLE_JSON_ADAPTER;
-                    if (type == float.class) return FLOAT_JSON_ADAPTER;
-                    if (type == int.class) return INTEGER_JSON_ADAPTER;
-                    if (type == long.class) return LONG_JSON_ADAPTER;
-                    if (type == short.class) return SHORT_JSON_ADAPTER;
+                    if (type == boolean.class) return BOOLEAN_JSON_ADAPTER.nullSafe();
+                    if (type == byte.class) return BYTE_JSON_ADAPTER.nullSafe();
+                    if (type == char.class) return CHARACTER_JSON_ADAPTER.nullSafe();
+                    if (type == double.class) return DOUBLE_JSON_ADAPTER.nullSafe();
+                    if (type == float.class) return FLOAT_JSON_ADAPTER.nullSafe();
+                    if (type == int.class) return INTEGER_JSON_ADAPTER.nullSafe();
+                    if (type == long.class) return LONG_JSON_ADAPTER.nullSafe();
+                    if (type == short.class) return SHORT_JSON_ADAPTER.nullSafe();
                     if (type == Boolean.class) return BOOLEAN_JSON_ADAPTER.nullSafe();
                     if (type == Byte.class) return BYTE_JSON_ADAPTER.nullSafe();
                     if (type == Character.class) return CHARACTER_JSON_ADAPTER.nullSafe();
