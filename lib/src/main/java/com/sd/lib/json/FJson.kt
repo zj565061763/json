@@ -3,8 +3,10 @@ package com.sd.lib.json
 import com.squareup.moshi.Moshi
 
 object FJson {
+
     @JvmStatic
     val moshi: Moshi = Moshi.Builder()
+        .add(StandardJsonAdapters.FACTORY)
         .add(FKotlinJsonAdapterFactory())
         .build()
 
