@@ -43,7 +43,7 @@ private fun decodeUser() {
     val json = """
             {"id":"1"}
         """.trimIndent()
-    val model = FJson.fromJson(json, UserModel::class.java)
+    val model = FJson.fromJson(json, UserModel::class.java)!!
     logMsg {
         "decodeUser:${UserModel::class.java.simpleName}(id=${model.id}, name=${model.name}, age=${model.age})"
     }
