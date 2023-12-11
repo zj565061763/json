@@ -1,9 +1,9 @@
 package com.sd.demo.json.model
 
-class MapModel {
+internal open class MapModel {
     var name = "default"
 
-    var map: MutableMap<String, String> = mutableMapOf<String, String>().apply {
+    private var map: MutableMap<String, String> = mutableMapOf<String, String>().apply {
         put("key", "value")
     }
 }

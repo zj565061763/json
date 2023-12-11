@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.sd.demo.json.databinding.ActivityMainBinding
 import com.sd.demo.json.model.DataUserModel
 import com.sd.demo.json.model.MapModel
+import com.sd.demo.json.model.PageRequestParams
 import com.sd.demo.json.model.UserModel
 import com.sd.lib.json.FJson
 
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         decodeDataUser()
         decodeUser()
         encodeMapModel()
+        encodeRequestParams()
     }
 }
 
@@ -43,8 +45,19 @@ private fun decodeUser() {
 
 private fun encodeMapModel() {
     val model = MapModel()
+    val json = FJson.toJson(model, MapModel::class.java)
     logMsg {
-        FJson.toJson(model, MapModel::class.java)
+        "encodeMapModel:$json"
+    }
+}
+
+private fun encodeRequestParams() {
+    val model = PageRequestParams().apply {
+        this.put("key", "value")
+    }
+    val json = FJson.toJson(model, PageRequestParams::class.java)
+    logMsg {
+        "encodeRequestParams:$json"
     }
 }
 
