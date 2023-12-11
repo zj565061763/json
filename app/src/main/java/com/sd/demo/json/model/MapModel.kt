@@ -1,9 +1,17 @@
 package com.sd.demo.json.model
 
-internal open class MapModel {
+import com.squareup.moshi.Json
+
+class MapModel {
     var name = "default"
 
-    private var map: MutableMap<String, String> = mutableMapOf<String, String>().apply {
-        put("key", "value")
+    @Json(name = "data")
+    private var _data: MutableMap<String, String>? = null
+
+    fun put(key: String, value: String) {
+        val map = _data ?: mutableMapOf<String, String>().also {
+            _data = it
+        }
+        map[key] = value
     }
 }

@@ -44,7 +44,9 @@ private fun decodeUser() {
 }
 
 private fun encodeMapModel() {
-    val model = MapModel()
+    val model = MapModel().apply {
+        this.put("key", "value")
+    }
     val json = FJson.toJson(model, MapModel::class.java)
     logMsg {
         "encodeMapModel:$json"
