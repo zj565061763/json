@@ -5,7 +5,7 @@ import com.squareup.moshi.Moshi
 object FJson {
     @JvmStatic
     val moshi: Moshi = Moshi.Builder()
-        .add(KotlinJsonAdapterFactory())
+        .add(FKotlinJsonAdapterFactory())
         .build()
 
     @JvmStatic
