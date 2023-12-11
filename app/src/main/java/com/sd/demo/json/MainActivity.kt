@@ -16,10 +16,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(_binding.root)
-        decodeDataUser()
-        decodeUser()
-        encodeMapModel()
-        encodeRequestParams()
+
+        _binding.btnEncode.setOnClickListener {
+            encodeMapModel()
+            encodeRequestParams()
+        }
+
+        _binding.btnDecode.setOnClickListener {
+            decodeDataUser()
+            decodeUser()
+        }
     }
 }
 
