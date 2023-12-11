@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(_binding.root)
         decodeDataUser()
         decodeUser()
-        decodeMapModel()
+        encodeMapModel()
     }
 }
 
@@ -41,7 +41,7 @@ private fun decodeUser() {
     }
 }
 
-private fun decodeMapModel() {
+private fun encodeMapModel() {
     val model = MapModel()
     logMsg {
         FJson.toJson(model, MapModel::class.java)
